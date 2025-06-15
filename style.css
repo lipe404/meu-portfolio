@@ -1,64 +1,214 @@
-/* Tema Vaporwave com cores neon e degradês suaves */
+/* Variáveis Globais de Cores e Fontes */
+:root {
+  --color-primary-pink: #ff9ff3;
+  --color-primary-yellow: #feca57;
+  --color-primary-cyan: #48dbfb;
+  --color-accent-hotpink: #ff6b81;
+  --color-accent-red: #ee5253;
 
-body {
-    background: linear-gradient(135deg, #ff9ff3, #feca57, #48dbfb);
-    font-family: 'Courier New', monospace;
-    color: #2f3542;
-    margin: 0;
-    padding: 0;
+  --color-nav-bg: #1e272e;
+  --color-text-main: #2f3542;
+  --color-text-nav-link: var(--color-accent-hotpink);
+  --color-text-nav-link-hover: var(--color-primary-yellow);
+  --color-heading: #341f97;
+
+  --color-section-bg: rgba(
+    255,
+    255,
+    255,
+    0.88
+  );
+  --color-section-shadow: rgba(
+    47,
+    53,
+    66,
+    0.15
+  );
+
+  --color-form-border: var(--color-accent-hotpink);
+  --color-form-focus-glow: rgba(
+    72,
+    219,
+    251,
+    0.7
+  );
+  --color-button-bg: var(--color-accent-hotpink);
+  --color-button-text: white;
+  --color-button-hover-bg: var(--color-accent-red);
+
+  --font-monospace: "Courier New", monospace;
+
+  --transition-speed: 0.3s;
 }
 
+/* Estilos Globais e Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Corpo */
+body {
+  background: linear-gradient(
+    135deg,
+    var(--color-primary-pink),
+    var(--color-primary-yellow),
+    var(--color-primary-cyan)
+  );
+  background-attachment: fixed;
+  font-family: var(--font-monospace);
+  color: var(--color-text-main);
+  line-height: 1.6;
+  min-height: 100vh;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Navegação */
+nav {
+  background-color: var(--color-nav-bg);
+  padding: 10px 0;
+  width: 100%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Lista de Navegação */
 nav ul {
-    display: flex;
-    justify-content: center;
-    background-color: #1e272e;
-    list-style-type: none;
-    margin: 0;
-    padding: 10px;
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
 }
 
 nav ul li {
-    margin: 0 15px;
+  margin: 0 20px;
 }
 
+/* Links de Navegação */
 nav ul li a {
-    color: #ff6b81;
-    text-decoration: none;
-    font-weight: bold;
+  color: var(--color-text-nav-link);
+  text-decoration: none;
+  font-weight: bold;
+  padding: 8px 12px;
+  border-radius: 4px;
+  transition: color var(--transition-speed) ease,
+    background-color var(--transition-speed) ease,
+    text-shadow var(--transition-speed) ease;
 }
 
-nav ul li a:hover {
-    color: #feca57;
+nav ul li a:hover,
+nav ul li a:focus {
+  color: var(--color-text-nav-link-hover);
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.1
+  );
+  text-shadow: 0 0 8px var(--color-text-nav-link-hover);
+  outline: none;
 }
 
+/* Seções de Conteúdo */
 section {
-    max-width: 800px;
-    margin: 50px auto;
-    background-color: rgba(255, 255, 255, 0.8);
-    padding: 20px;
-    border-radius: 10px;
+  max-width: 800px;
+  width: 90%;
+  margin: 50px auto;
+  background-color: var(--color-section-bg);
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px var(--color-section-shadow);
 }
 
-h1, h2 {
-    color: #341f97;
-    text-align: center;
+/* Cabeçalhos */
+h1,
+h2 {
+  color: var(--color-heading);
+  text-align: center;
+  margin-bottom: 25px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1), 0 0 5px rgba(72, 219, 251, 0.3);
 }
 
-form label, form input, form textarea, form button {
-    display: block;
-    width: 100%;
-    margin-bottom: 10px;
+h1 {
+  font-size: 2.5em;
+  margin-bottom: 30px;
 }
 
+h2 {
+  font-size: 1.8em;
+}
+
+/* Formulários */
+form label {
+  display: block;
+  width: 100%;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: var(--color-heading);
+}
+
+/* Campos de Formulário */
+form input[type="text"],
+form input[type="email"],
+form textarea {
+  display: block;
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 12px 15px;
+  border: 1px solid var(--color-form-border);
+  border-radius: 6px;
+  background-color: rgba(255, 255, 255, 0.7);
+  font-family: var(--font-monospace);
+  font-size: 1em;
+  color: var(--color-text-main);
+  transition: border-color var(--transition-speed) ease,
+    box-shadow var(--transition-speed) ease;
+}
+
+form input[type="text"]:focus,
+form input[type="email"]:focus,
+form textarea:focus {
+  outline: none;
+  border-color: var(--color-primary-cyan);
+  box-shadow: 0 0 8px var(--color-form-focus-glow);
+}
+
+form textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+/* Botão de Formulário */
 form button {
-    background-color: #ff6b81;
-    color: white;
-    border: none;
-    padding: 10px;
-    border-radius: 5px;
-    cursor: pointer;
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+  background-color: var(--color-button-bg);
+  color: var(--color-button-text);
+  border: none;
+  padding: 12px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  font-family: var(--font-monospace);
+  font-size: 1.1em;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: background-color var(--transition-speed) ease,
+    transform var(--transition-speed) ease,
+    box-shadow var(--transition-speed) ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-form button:hover {
-    background-color: #ee5253;
+form button:hover,
+form button:focus {
+  background-color: var(--color-button-hover-bg);
+  transform: translateY(
+    -2px
+  );
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  outline: none;
 }
