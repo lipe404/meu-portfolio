@@ -143,13 +143,53 @@ h2 {
 }
 
 /*Portfólio*/
-ul li a {
-    text-decoration: none;
-    font-weight: bold;
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
 }
-ul li a:hover {
-    color: var(--color-nav-bg);
+
+.portfolio-item {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--color-primary-cyan);
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.portfolio-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.portfolio-item h3 {
+    color: var(--color-accent-hotpink);
+    margin-bottom: 10px;
+}
+
+.portfolio-item p {
+    font-size: 0.9em;
+    margin-bottom: 15px;
+    color: var(--color-text-main);
+}
+.project-links a {
+    display: inline-block;
+    margin-right: 10px;
+    margin-bottom: 5px;
+    padding: 8px 15px;
+    background-color: var(--color-accent-hotpink);
+    color: white;
     text-decoration: none;
+    border-radius: 4px;
+    font-size: 0.9em;
+    transition: background-color 0.3s ease;
+}
+.project-links a:hover {
+    background-color: var(--color-accent-red);
+}
+.project-links a i {
+    margin-left: 5px;
 }
 
 /* Formulários */
@@ -221,6 +261,11 @@ form button:focus {
   );
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   outline: none;
+}
+
+.outras-formas-contato {
+  text-align: center;
+  margin-top: 20px;
 }
 
 /* Media Queries */
