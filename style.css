@@ -1,0 +1,64 @@
+/* Tema Vaporwave com cores neon e degradês suaves */
+
+body {
+    background: linear-gradient(135deg, #ff9ff3, #feca57, #48dbfb);
+    font-family: 'Courier New', monospace;
+    color: #2f3542;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    background-color: #1e272e;
+    list-style-type: none;
+    margin: 0;
+    padding: 10px;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #ff6b81;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    color: #feca57;
+}
+
+section {
+    max-width: 800px;
+    margin: 50px auto;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+h1, h2 {
+    color: #341f97;
+    text-align: center;
+}
+
+form label, form input, form textarea, form button {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+form button {
+    background-color: #ff6b81;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #ee5253;
+}
