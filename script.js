@@ -1,16 +1,16 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // --- 1. Navegação Ativa ---
-  // Adiciona uma classe 'active' ao link de navegação da página atual.
+  // Neste parte do código, eu configuro a navegação ativa para destacar o link da página atual.
+  // Isso melhora a usabilidade, permitindo que os usuários saibam em qual página estão.
   const setActiveNavLink = () => {
     const currentPage =
-      window.location.pathname.split("/").pop() || "index.html"; // Pega o nome do arquivo da URL
+      window.location.pathname.split("/").pop() || "index.html";
     const navLinks = document.querySelectorAll("nav ul li a");
 
     navLinks.forEach((link) => {
       const linkPage = link.getAttribute("href").split("/").pop();
       if (linkPage === currentPage) {
         link.classList.add("active");
-        link.setAttribute("aria-current", "page"); // Para acessibilidade
+        link.setAttribute("aria-current", "page");
       } else {
         link.classList.remove("active");
         link.removeAttribute("aria-current");
@@ -19,7 +19,8 @@ document.addEventListener("DOMContentLoaded", function () {
   };
   setActiveNavLink();
 
-  // --- 2. Manipulação do Formulário de Contato ---
+  // Nesta parte do código, eu configuro o formulário de contato para validar os campos e simular o envio.
+  // Isso é importante para garantir que os usuários recebam feedback imediato sobre o status do envio.
   const contactForm = document.getElementById("contact-form");
   const formStatus = document.getElementById("form-status");
 
