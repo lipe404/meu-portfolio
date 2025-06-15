@@ -113,6 +113,51 @@ nav ul li a:focus {
   text-decoration: none;
 }
 
+/* Active Link */
+nav ul li a.active {
+    color: var(--color-primary-yellow);
+    text-shadow: 0 0 10px var(--color-primary-yellow), 0 0 20px var(--color-primary-yellow);
+    position: relative;
+}
+
+nav ul li a.active::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    height: 2px;
+    background-color: var(--color-primary-yellow);
+    border-radius: 1px;
+}
+
+#form-status {
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.status-success {
+    background-color: rgba(72, 251, 170, 0.2);
+    color: #009900;
+    border: 1px solid #009900;
+}
+
+.status-error {
+    background-color: rgba(255, 107, 129, 0.2);
+    color: #cc0000;
+    border: 1px solid #cc0000;
+}
+
+.status-loading {
+    background-color: rgba(72, 219, 251, 0.2);
+    color: var(--color-heading);
+    border: 1px solid var(--color-primary-cyan);
+}
+
 /* Seções de Conteúdo */
 section {
   max-width: 800px;
